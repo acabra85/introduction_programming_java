@@ -17,27 +17,24 @@ public class MyInputReader {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        BufferedReader bf = MyInputReader.getBufferedReaderInstance();
-        return Integer.parseInt(bf.readLine().trim());
+        return Integer.parseInt(getReader().readLine().trim());
     }
 
     public final double readDouble(final Optional msg) throws IOException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        BufferedReader bf = MyInputReader.getBufferedReaderInstance();
-        return Double.parseDouble(bf.readLine().trim());
+        return Double.parseDouble(getReader().readLine().trim());
     }
 
     public final String readString(final Optional msg) throws IOException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        BufferedReader bf = MyInputReader.getBufferedReaderInstance();
-        return bf.readLine().trim();
+        return getReader().readLine().trim();
     }
 
-    private final static BufferedReader getBufferedReaderInstance() {
+    private final static BufferedReader getReader() {
         if(reader == null)
             reader = new BufferedReader(new InputStreamReader(System.in));
         return reader;
