@@ -45,9 +45,8 @@ public class MyInputReader {
             System.out.println("Error: unable to close the reader");
         }
     }
-	
-	
-	public static void main() {
+    
+    public static void main(String [] args) {
         MyInputReader myInputReader = new MyInputReader();
         System.out.println("#Testing read Double ");
         try{
