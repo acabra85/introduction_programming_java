@@ -11,33 +11,31 @@ import java.util.Optional;
  */
 public class MyInputReader {
 
-    private static BufferedReader reader;
+    private BufferedReader reader;
+	
+	public MyInputReader () {
+		reader = new BufferedReader(new InputStreamReader(System.in));
+	}
 
-    public final int readInteger(final Optional msg) throws IOException {
+    public final int readInt(final Optional msg) throws IOException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        return Integer.parseInt(getReader().readLine().trim());
+        return Integer.parseInt(reader.readLine().trim());
     }
 
     public final double readDouble(final Optional msg) throws IOException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        return Double.parseDouble(getReader().readLine().trim());
+        return Double.parseDouble(reader.readLine().trim());
     }
 
     public final String readString(final Optional msg) throws IOException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        return getReader().readLine().trim();
-    }
-
-    private final static BufferedReader getReader() {
-        if(reader == null)
-            reader = new BufferedReader(new InputStreamReader(System.in));
-        return reader;
+        return reader.readLine().trim();
     }
 
     public final void close() {
@@ -46,5 +44,30 @@ public class MyInputReader {
         } catch (IOException e) {
             System.out.println("Error: unable to close the reader");
         }
+    }
+	
+	
+	public static void main() {
+        MyInputReader myInputReader = new MyInputReader();
+        System.out.println("#Testing read Double ");
+        try{
+            double value_double = myInputReader.readDouble(Optional.of("Enter double:"));
+            System.out.println("I read the double -> " + value_double);
+        } catch (IOException ioe) {
+
+        }
+        try{
+            int value_int = myInputReader.readInt(Optional.of("Enter double:"));
+            System.out.println("I read the int -> " + value_int);
+        } catch (IOException ioe) {
+
+        }
+        try{
+            String value_string = myInputReader.readString(Optional.of("Enter double:"));
+            System.out.println("I read the string -> " + value_string);
+        } catch (IOException ioe) {
+
+        }
+        myInputReader.close();
     }
 }
