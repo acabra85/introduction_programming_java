@@ -27,7 +27,7 @@ Let's download the code from the folder util.
 * We have defined a InputReader class called ```MyInputReader.java``` which contains the methods to read doubles, integers and Strings.
 * We also defined a TestInput class called ```TestInput.java``` which contains a main method to test the functionality from the class mentioned above.
 * First lets download and install the jdk http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html make sure you aggree to the terms and conditions.
-* To download the code using git download the gitbash program https://git-scm.com/download/win 
+* To download the code using git download and install the git-bash program https://git-scm.com/download/win 
 * Using the git bash console run: ```git clone https://github.com/acabra85/introduction_programming_java.git ```
 * Once the code is downloaded place yor console on the folder that contains the util folder.
 * First we compile the java files with the following code: ```javac -d . util/MyInputReader.java util/TestInput.java``` please note that we are using the parameter '-d' with option '.' it means to use the current directory as destination for .class files.
