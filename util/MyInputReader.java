@@ -45,28 +45,4 @@ public class MyInputReader {
             System.out.println("Error: unable to close the reader");
         }
     }
-    
-    public static void main(String [] args) {
-        MyInputReader myInputReader = new MyInputReader();
-        System.out.println("#Testing read Double ");
-        try{
-            double value_double = myInputReader.readDouble(Optional.of("Enter double:"));
-            System.out.println("I read the double -> " + value_double);
-        } catch (IOException ioe) {
-
-        }
-        try{
-            int value_int = myInputReader.readInt(Optional.of("Enter double:"));
-            System.out.println("I read the int -> " + value_int);
-        } catch (IOException ioe) {
-
-        }
-        try{
-            String value_string = myInputReader.readString(Optional.of("Enter double:"));
-            System.out.println("I read the string -> " + value_string);
-        } catch (IOException ioe) {
-
-        }
-        myInputReader.close();
-    }
 }
