@@ -17,18 +17,31 @@ public class MyInputReader {
 		reader = new BufferedReader(new InputStreamReader(System.in));
 	}
 
-    public final int readInt(final Optional msg) throws IOException {
+    public final int readInt(final Optional msg) throws IOException, NumberFormatException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        return Integer.parseInt(reader.readLine().trim());
+		String input = "";
+		try {
+			input = reader.readLine().trim();
+			return Integer.parseInt(input);
+		} catch (NumberFormatException nfe) {
+			throw new NumberFormatException("The input not a valid int :" + input);
+		}
     }
 
-    public final double readDouble(final Optional msg) throws IOException {
+    public final double readDouble(final Optional msg) throws IOException, NumberFormatException {
         if(msg.isPresent()){
             System.out.print(msg.get());
         }
-        return Double.parseDouble(reader.readLine().trim());
+		String input = "";
+		try {
+			input = reader.readLine().trim();
+			return Double.parseDouble(input);
+		} catch (NumberFormatException nfe) {
+			throw new NumberFormatException("The input not a valid double :" + input);
+		}
+			
     }
 
     public final String readString(final Optional msg) throws IOException {
