@@ -2,7 +2,7 @@
 Base material to the course introduction_programming_java
 
 
-## Running Programs from command Line
+## Running Java Programs from command Line
 
 The key aspects for running program are:
 
